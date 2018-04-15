@@ -1,4 +1,4 @@
-dylanratcliffe/puppet_webapp1:
+dylanratcliffe/puppet_webapp:
   Env:
     - PORT: "8080"
   PreBuild:
