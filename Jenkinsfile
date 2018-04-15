@@ -2,7 +2,7 @@ node {
 
     step([$class: 'WsCleanup'])
 
-    git url:'git@github.com:ipcrm/flask_puppet.git', branch: 'master'
+    git url:'git@github.com:dylanratcliffe/flask_puppet.git', branch: 'master'
 
     def hostaddress = 'jenkins.demo.lan'
     puppet.credentials 'pe-access-token'
@@ -37,7 +37,7 @@ node {
 
     stage 'Deployment Test'
     puppet.hiera scope: 'flask_puppet_beaker', key: 'flask_puppet_beaker-dist_file', value: "http://" + hostaddress + "/builds/flask_puppet/dist/flask_puppet-${pkgversion}.tar.gz"
-    build job: 'ipcrm-flask_app', parameters: [[$class: 'StringParameterValue', name: 'COMMIT', value: env.flask_app_module_ver]]
+    build job: 'dylanratcliffe-flask_app', parameters: [[$class: 'StringParameterValue', name: 'COMMIT', value: env.flask_app_module_ver]]
 
 
     stage 'Deploy to Dev'

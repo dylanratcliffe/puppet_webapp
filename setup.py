@@ -31,7 +31,7 @@ setup(
     include_package_data=True,
 
     # Details
-    url="https://github.com/ipcrm/puppet_webapp",
+    url="https://github.com/dylanratcliffe/puppet_webapp",
 
     description="Example App",
     test_suite = 'tests',
